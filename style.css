@@ -1,0 +1,87 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    background-color: black;
+    margin-top: 100px;
+    width: 450px;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    height: 500px;
+    width: 400px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 350px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid white;
+    font-size: 75px;
+    align-items: center;
+    justify-content: end;
+}
+
+.buttons {
+    height: 340px;
+    width: 350px;
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 4px;
+    border: 1px solid blue;
+    border-radius: 4px;
+}
+
+.calc,
+.equals {
+    width: 78px;
+    height: 55px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    font-size: large;
+}
+
+.clear {
+    width: 78px;
+    height: 55px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    font-size: large;
+}
+
+.calc:hover {
+    cursor: pointer;
+}
+
+#equals {
+    width: 156px;
+}
+
+#x,
+#plus,
+#minus,
+#divide {
+    font-size: 25px;
+}

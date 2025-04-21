@@ -30,13 +30,16 @@ function addToScreen(e) {
             text.textContent += `${e.target.id}`
             screens.append(text) 
         } else if (operator != null && isNaN(e.target.id) == false || operator != null && e.target.id == '.') {
+            if (second == 0) {
+              text.textContent = ' '
+            }
             second += e.target.id
             text.textContent += `${e.target.id}`
             screens.append(text)
         } else if (operator == null && isNaN(e.target.id) == true && e.target.id != '.') {
             operator = e.target.id
-            text.textContent += `${operator}`
-            screens.append(text)
+            //text.textContent = ``
+            //screens.append(text)
         }
     } else if (theText.toString().length >= 8 && theText.toString().length < 14) {
       screens.style.fontSize = "45px"
@@ -119,7 +122,7 @@ function equate() {
           text.textContent = 'Error'
           screens.append(text)
          }
-    } else if (operator == '/'){
+    } else if (operator == '/' && second != 0){
           answer = +first / +second
     
         if (answer.toString().length < 34) {
@@ -130,6 +133,9 @@ function equate() {
           text.textContent = 'Error'
           screens.append(text)
          }
+    } else if (operator == '/' && second == 0){
+      text.textContent = "NOPE"
+      screens.append(text)
     }
     operator = null
     first = answer

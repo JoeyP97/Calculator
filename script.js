@@ -136,6 +136,17 @@ function equate() {
     } else if (operator == '/' && second == 0){
       text.textContent = "NOPE"
       screens.append(text)
+    } else if (operator == 'mod') {
+        answer = +first % +second
+    
+        if (answer.toString().length < 34) {
+          text.textContent = `${answer}`
+          screens.append(text)
+        }
+        else {
+          text.textContent = 'Error'
+          screens.append(text)
+         }
     }
     operator = null
     first = answer

@@ -38,6 +38,36 @@ function addToScreen(e) {
             text.textContent += `${operator}`
             screens.append(text)
         }
+    } else if (theText.toString().length >= 8 && theText.toString().length < 14) {
+      screens.style.fontSize = "45px"
+      if (operator == null && isNaN(e.target.id) == false || operator == null && e.target.id == '.') {
+        first += e.target.id
+        text.textContent += `${e.target.id}`
+        screens.append(text) 
+    } else if (operator != null && isNaN(e.target.id) == false || operator != null && e.target.id == '.') {
+        second += e.target.id
+        text.textContent += `${e.target.id}`
+        screens.append(text)
+    } else if (operator == null && isNaN(e.target.id) == true && e.target.id != '.') {
+        operator = e.target.id
+        text.textContent += `${operator}`
+        screens.append(text)
+    }
+    } else if (theText.toString().length >= 14 && theText.toString().length < 34) {
+      screens.style.fontSize = "20px"
+      if (operator == null && isNaN(e.target.id) == false || operator == null && e.target.id == '.') {
+        first += e.target.id
+        text.textContent += `${e.target.id}`
+        screens.append(text) 
+    } else if (operator != null && isNaN(e.target.id) == false || operator != null && e.target.id == '.') {
+        second += e.target.id
+        text.textContent += `${e.target.id}`
+        screens.append(text)
+    } else if (operator == null && isNaN(e.target.id) == true && e.target.id != '.') {
+        operator = e.target.id
+        text.textContent += `${operator}`
+        screens.append(text)
+    }
     }
     theText = text.textContent
 }
@@ -50,6 +80,7 @@ clear.addEventListener("click", () => {
     second = 0
     operator = null
     screens.append(text)
+    screens.style.fontSize = "75px"
 })
 
 // complete equation using info from calculator (clean up possibly with operator being input into each equation?)
@@ -58,7 +89,7 @@ function equate() {
     if (operator == '+'){
           answer = +first + +second
     
-        if (answer.toString().length <= 8) {
+        if (answer.toString().length < 34) {
           text.textContent = `${answer}`
           screens.append(text)
         }
@@ -69,7 +100,7 @@ function equate() {
     } else if (operator == '-'){
           answer = +first - +second
     
-        if (Number(first <= 99999999)) {
+        if (answer.toString().length < 34) {
           text.textContent = `${answer}`
           screens.append(text)
         }
@@ -80,7 +111,7 @@ function equate() {
     } else if (operator =='x'){
           answer = +first * +second
     
-        if (Number(first <= 99999999)) {
+        if (answer.toString().length < 34) {
           text.textContent = `${answer}`
           screens.append(text)
         }
@@ -91,7 +122,7 @@ function equate() {
     } else if (operator == '/'){
           answer = +first / +second
     
-        if (Number(first <= 99999999)) {
+        if (answer.toString().length < 34) {
           text.textContent = `${answer}`
           screens.append(text)
         }

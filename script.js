@@ -52,6 +52,7 @@ clear.addEventListener("click", () => {
     screens.append(text)
 })
 
+// complete equation using info from calculator (clean up possibly with operator being input into each equation?)
 function equate() {
     let answer
     if (operator == '+'){
